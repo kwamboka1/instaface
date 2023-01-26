@@ -6,8 +6,8 @@ const Landing = () => {
     <div className="bg-[url('/hero-section.svg')]">
       <div>
           <div className="text-center">
-            <h1 className="text-6xl text-white pt-56">Welcome to Users' <br></br>Dashboard</h1>
-          <p className="text-white p-6 text-justify-center">Users' Dashboard is a platform to share and view photos, <br></br>If you want to have a look and a feel how it is used, be sure to<br></br> signUp
+            <h1 className="text-6xl text-white pt-56 font-serif">Welcome to Instaface <br></br>Dashboard</h1>
+          <p className="text-white p-6 text-justify-center font-sans"> Instaface is a platform to share and view photos, <br></br>If you want to have a look and a feel how it is used, be sure to<br></br> signUp
             to unlock the privilleges that comes with it. Have fun!</p>
           </div>  
         <main className="flex justify-center gap-x-8 pb-56">
