@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
 // https://developers.google.com/identity/gsi/web/reference/js-reference
@@ -32,12 +32,12 @@ const Login = () => {
 
   return (
     <>
-      <nav className="p-4">
+      {/* <nav className="p-4">
         <Link to="/">Go Back</Link>
       </nav>
       <header className="text-center">
         <h1>Login to continue</h1><br></br>
-      </header>
+      </header> */}
       <main className="flex justify-center flex-col items-center"
       >
         {error && <p className="text-red ">{error}</p>}
