@@ -20,7 +20,7 @@ const Login = () => {
 
       google.accounts.id.renderButton(document.getElementById("loginDiv"), {
         // type: "standard",
-        theme: "filled_blue",
+        theme: "filled_white",
         // size: "small",
         text: "signin_with",
         shape: "rectangular",
