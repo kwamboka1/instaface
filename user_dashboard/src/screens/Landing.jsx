@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Login } from "."
-import { Signup } from ".";
+import { Login, Signup } from ".";
 
 const Landing = () => {
   return (

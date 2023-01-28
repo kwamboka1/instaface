@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-require("dotenv/config");
+require("dotenv/config"); // configure reading from .env
 const cors = require("cors");
 const { OAuth2Client } = require("google-auth-library");
 const jwt = require("jsonwebtoken");
