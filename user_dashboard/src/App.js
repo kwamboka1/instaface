@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Home, Landing } from "./screens";
 
 const App = () => {
@@ -14,8 +14,9 @@ const App = () => {
       setUser(JSON.parse(theUser));
     }
   }, []);
+  // console.log({user})
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/"
@@ -38,7 +39,7 @@ const App = () => {
           element={user?.email ? <Home user={user} /> : <Navigate to="User" />}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
