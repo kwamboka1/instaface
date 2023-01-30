@@ -42,7 +42,10 @@ const SignUp = () => {
       >
         {error && <p className="text-red">{error}</p>}
         {loading ? (
-          <div>Loading....</div>
+          <div>
+            Loading....
+
+          </div>
         ) : (
           <div id="signUpDiv" data-text="signup_with"></div>
         )}

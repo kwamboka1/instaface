@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Menu } from ".";
 
 // Pass User
 const Home = ({ user }) => {
@@ -29,33 +31,36 @@ const [error, setError] = useState(null);
             return <div>Loading...</div>;
         } else {
           return (
-            <div className="text-center m-12">
-              <h1>Dear {user?.email}</h1>
-        
-              <span>
-                You are viewing this page because you are logged in or you just signed
-                up
-              </span>
-        
-              <div>
-                <button onClick={logout} className="text-red bg-white py-2 px-4 cursor-pointer border border-black"    
-                >
-                  Logout
-                </button>
+            <>
+              <Menu /> 
+              <button onClick={logout} className="float-right bg-white hover:text-red-800 mr-4 px-8 py-2 cursor-pointer border border-1"    
+                  >
+                    Logout
+                  </button>
+              <div className="m-12">
+                <p className="start">Dear {user?.email}</p> 
+                    <em><small>
+                      You are viewing this page because you are logged in or you just signed
+                      up
+                    </small></em><br />
+                
+                <h1 className="text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-orange-500 text-center inline-block font-bold">DashBoard</h1><hr />
+                  
+                <table>
+                  <th>Users</th><br />
+                    <ul>
+                      {users.map(user => (
+                        <li className="hover:text-purple-900 hover:underline">
+                            <Link to={`user/${user.id}`}>{user.name} {user.album}</Link>
+                        </li>
+                      ))}   
+                    </ul>
+                  <th>Album</th>
+                </table>
               </div>
-              <h1>DashBoard</h1>
-                <ul>
-                  {users.map(user => (
-                  <li key={user.id}>
-                      {user.name} 
-                  </li>
-                  ))}
-                </ul>
-              
-            </div>
+          </>
           );
-        };        
-     
+        };
 };
 
 export default Home;
