@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/instaface/static/css/main.3fc88c45.css",
+    "main.js": "/instaface/static/js/main.431f847f.js",
+    "static/js/787.695bf4f7.chunk.js": "/instaface/static/js/787.695bf4f7.chunk.js",
+    "static/media/hero-section.svg": "/instaface/static/media/hero-section.f701ac7876618c57d1b6.svg",
+    "index.html": "/instaface/index.html",
+    "main.3fc88c45.css.map": "/instaface/static/css/main.3fc88c45.css.map",
+    "main.431f847f.js.map": "/instaface/static/js/main.431f847f.js.map",
+    "787.695bf4f7.chunk.js.map": "/instaface/static/js/787.695bf4f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3fc88c45.css",
+    "static/js/main.431f847f.js"
+  ]
+}
