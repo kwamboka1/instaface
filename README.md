@@ -1,5 +1,6 @@
 # Getting started with instaface
 ---
+deployed_version![deploye-app](https://kwamboka1.github.io/instaface/)
 ![Mily](/landing.png)
 
 ## Tools and Languages
