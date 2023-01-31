@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect }  from 'react';
 
 const User = props => {
-    let id = props.match.params.id
+    var id = props.match.params.id
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [user, setUser] = useState([]);
+    const [userAddress, setUserAddress] = useState([]);
+    const [userCompany, setUserCompany] = useState([]);
     
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users/" + id)
@@ -12,15 +14,17 @@ const User = props => {
             .then(
                 (data) => {
                     console.log(data);
-                    setUser(data);
                     setIsLoaded(true);
+                    setUser(data);
+                    setUserAddress(data.address);
+                    setUserCompany(data.company);
                 },
                 (error) => {
                     setIsLoaded(true);
                     setError(error);
                 }
             )
-    }, [id])
+    },[id])
     if (error) {
         return <div>Error: {error.message}</div>;
     }
@@ -31,9 +35,6 @@ const User = props => {
     if (user) {
         return (
             <div>
-                <div>
-                    Photo: {user.Photo}
-                </div>
                 <h1>{user.name}</h1>
                 <div>
                     Email: {user.email}
@@ -43,10 +44,15 @@ const User = props => {
                 </div>
                 <div>
                     Website: {user.website}
+                </div>  
+                <div>
+                    Company: {userCompany.name}
+                </div> 
+                <div>
+                    Address: {userAddress.street}, {userAddress.suite}, {userAddress.city}, {userAddress.zipcode}   
                 </div>
-            </div>
+          </div>
         );
     }
 }
-
 export default User;

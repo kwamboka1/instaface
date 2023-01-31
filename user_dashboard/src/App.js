@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Home, Landing } from "./screens";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Home, Landing, User } from "./screens";
+
 
 const App = () => {
   const [user, setUser] = useState({});
@@ -15,8 +16,9 @@ const App = () => {
     }
   }, []);
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
+        <Route exact path="user/:id" element={<User />} />
         <Route
           path="/"
           element={user?.email ? <Navigate to="/home" /> : <Landing />}
@@ -33,12 +35,12 @@ const App = () => {
           path="/home"
           element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
         />
-        <Route
-          path="/users"
-          element={user?.email ? <Home user={user} /> : <Navigate to="User" />}
-        />
+        {/* <Route
+          path="/user/:id"
+          element={user?.email ? <Navigate to="/user" /> : <Home />}
+        /> */}
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

@@ -32,14 +32,7 @@ const SignUp = () => {
 
   return (
     <>
-      {/* <nav className="p-4">
-        <Link to="/">Go Back</Link>
-      </nav>
-      <header className="text-center">
-        <h1>Register to proceed to dashboard</h1><br></br>
-      </header> */}
-      <main className="flex justify-center flex-col items-center"
-      >
+      <main className=" xl:max-w-7xl xl:mx-auto max-w-full px-8% flex-wrap flex justify-center flex-col items-center">
         {error && <p className="text-red">{error}</p>}
         {loading ? (
           <div>

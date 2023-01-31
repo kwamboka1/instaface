@@ -53,9 +53,9 @@ const [error, setError] = useState(null);
                         <li className="hover:text-purple-900 hover:underline">
                             <Link to={`user/${user.id}`}>{user.name} {user.album}</Link>
                         </li>
-                      ))}   
+                      ))}
+                      <th>Album</th>   
                     </ul>
-                  <th>Album</th>
                 </table>
               </div>
           </>
