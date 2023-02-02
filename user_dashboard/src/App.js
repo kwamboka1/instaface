@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Home, Landing } from "./screens";
+import { Album, Home, Landing, Photo, User } from "./screens";
 
 
 const App = () => {
@@ -32,6 +32,15 @@ const App = () => {
         <Route
           path="/home"
           element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
+        />
+        <Route
+          path="album" element={<Album />}
+        />
+        <Route 
+          path="photo" element={<Photo />} 
+        />
+        <Route 
+          path="user" element={<User />} 
         />
       </Routes>
     </HashRouter>

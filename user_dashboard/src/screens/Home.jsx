@@ -37,7 +37,7 @@ const [error, setError] = useState(null);
               <button onClick={logout} className="float-right bg-white hover:text-red-800 mr-4 px-8 py-2 cursor-pointer border border-1"    
                   >
                     Logout
-                  </button>
+              </button>
               <div className="m-12">
                 <p className="start">Dear {user?.email}</p> 
                     <em><small>

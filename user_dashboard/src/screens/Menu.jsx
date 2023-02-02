@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import { FiMenu } from "react-icons/fi";
-// import { Album, Photo } from '.';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import logo from "./assets/logo192.png";
