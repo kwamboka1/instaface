@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Home, Landing } from "./screens";
+import { Album, Home, Landing, Photo, User } from "./screens";
 
 const App = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    // fetch("http://localhost:5152/user")
     const theUser = localStorage.getItem("user");
 
     if (theUser && !theUser.includes("undefined")) {
@@ -35,8 +34,13 @@ const App = () => {
           element={user?.email ? <Home user={user} /> : <Navigate to="/" />}
         />
         <Route
-          path="/users"
-          element={user?.email ? <Home user={user} /> : <Navigate to="User" />}
+          path="album" element={<Album />}
+        />
+        <Route 
+          path="photo" element={<Photo />} 
+        />
+        <Route 
+          path="user" element={<User />} 
         />
       </Routes>
     </HashRouter>

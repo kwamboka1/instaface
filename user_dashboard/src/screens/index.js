@@ -6,3 +6,4 @@ export { default as User } from "./User";
 export { default as Album } from "./Album";
 export { default as Photo } from "./Photo";
 export { default as Menu } from "./Menu";
+export {  default as Footer } from "./Footer";
