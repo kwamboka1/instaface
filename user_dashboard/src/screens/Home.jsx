@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu } from ".";
+import { Menu, Footer } from ".";
 
 // Pass User
-const Home = ({ user }) => {
+const Home = ({ user, album }) => {
   const logout = () => {
     localStorage.removeItem("user");
     window.location.reload();
@@ -11,6 +11,7 @@ const Home = ({ user }) => {
 const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [users, setUsers] = useState([]);
+  // const [allAlbums, setallAlbums] = useState(false);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users/")
             .then(res => res.json())
@@ -54,10 +55,12 @@ const [error, setError] = useState(null);
                             <Link to={`user/${user.id}`}>{user.name} {user.album}</Link>
                         </li>
                       ))}
-                      <th>Album</th>   
                     </ul>
+                    <th>Albums</th> 
+                    
                 </table>
               </div>
+              <Footer />
           </>
           );
         };
