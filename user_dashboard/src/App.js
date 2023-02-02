@@ -3,7 +3,6 @@ import { useState } from "react";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Album, Home, Landing, Photo, User } from "./screens";
 
-
 const App = () => {
   const [user, setUser] = useState({});
 
@@ -14,6 +13,7 @@ const App = () => {
       setUser(JSON.parse(theUser));
     }
   }, []);
+  // console.log({user})
   return (
     <HashRouter>
       <Routes>
