@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./assets/logo192.png";
+import logo from "../assets/logo192.png";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
@@ -12,7 +12,7 @@ function Footer() {
           <p className="py-6 md:pr-10 text-white">Receive Updates, sent direct to your inbox.</p>
           <div className="md:pr-10">
             <form className="relative pb-4" method="Post" action="">
-              <input type={"email"} value={""} className="email rounded-full py-4 px-6 w-full text-black outline-0" placeholder="Enter email" />
+              <input type={"email"} value={""} className="email rounded-full py-4 px-6 w-full text-purple outline-0" placeholder="Enter email" />
               <button className="absolute right-0 rounded-full rounded-l-none py-4 px-6 bg-purple-100 hover:bg-purple-200">Subscribe</button>
             </form>
           </div>
@@ -29,9 +29,9 @@ function Footer() {
         <div className="col-span-2 grid grid-cols-2 l:pl-10 gap-10">
           {/* footer links */}
           <div className=" text-white hover:underline hover:text-purple-200">
-            <h3 className="hover:no-underline">Quick Links</h3>
+            <h3>Quick Links</h3>
             <div className="py-4 ">
-              <NavLink className=" block text-base" to="/">
+              <NavLink className="pt-4 block text-base" to="/">
                 <p className="text-l">Home</p>
               </NavLink>
               <NavLink className="pt-4 block text-base" to="/Photo">

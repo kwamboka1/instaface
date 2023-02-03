@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import logo from "./assets/logo192.png";
+import logo from "../assets/logo192.png";
 
 function Menu() {
     const [nav, setNav] = useState(false);
@@ -11,7 +11,7 @@ function Menu() {
 
   return (
     <>
-        <div className="Header bg-purple-200 w-full text-purple-900 hover:underline">
+        <div className="Header bg-purple-200 w-full text-purple-900">
         <div className="max-w-[1440px] mx-auto py-6 px-10 flex justify-between">
             <div>
             <NavLink to="/">

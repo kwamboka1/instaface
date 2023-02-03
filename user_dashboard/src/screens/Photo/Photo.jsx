@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Footer } from '.'
+import { Menu, Footer } from '..'
 
 function Photo() {
   const logout = () => {
