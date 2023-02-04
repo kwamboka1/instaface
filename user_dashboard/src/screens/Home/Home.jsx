@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Footer } from ".";
+import { Menu, Footer } from "..";
 
 // Pass User
 const Home = ({ user, album }) => {
@@ -47,18 +47,28 @@ const [error, setError] = useState(null);
                 
                 <h1 className="text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-orange-500 text-center inline-block font-bold">DashBoard</h1><hr />
                   
-                <table>
-                  <th>Users</th><br />
-                    <ul>
-                      {users.map(user => (
-                        <li className="hover:text-purple-900 hover:underline">
-                            <Link to={`user/${user.id}`}>{user.name} {user.album}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                    <th>Albums</th> 
-                    
-                </table>
+                <tbody>
+                  <tr>
+                    <th>Users</th>
+                    <th>Number of Albums</th>
+                      {/* <ul>
+                        {users.map(user => (
+                          <li className="hover:text-purple-900 hover:underline">
+                              <Link to={`user/${user.id}`}>{user.name} {user.album}</Link>
+                          </li>
+                        ))}
+                      </ul> */}
+                  </tr>
+                  {users.map((user, album) => (
+                  <tr key={album}> 
+                    <td>
+                      <p className="hover:text-purple-900 hover:underline">
+                      <Link to={`user/${user.id}`}>{user.name}</Link></p>
+                    </td>
+
+                  </tr>
+                  ))}
+                </tbody>
               </div>
               <Footer />
           </>
