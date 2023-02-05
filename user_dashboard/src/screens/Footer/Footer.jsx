@@ -12,7 +12,7 @@ function Footer() {
           <p className="py-6 md:pr-10 text-white">Receive Updates, sent direct to your inbox.</p>
           <div className="md:pr-10">
             <form className="relative pb-4" method="Post" action="">
-              <input type={"email"} value={""} className="email rounded-full py-4 px-6 w-full text-purple outline-0" placeholder="Enter email" />
+              <input type={"email"} onChange={ ()=> console.log('test')} value={""} className="email rounded-full py-4 px-6 w-full text-purple outline-0" placeholder="Enter email" />
               <button className="absolute right-0 rounded-full rounded-l-none py-4 px-6 bg-purple-100 hover:bg-purple-200">Subscribe</button>
             </form>
           </div>
