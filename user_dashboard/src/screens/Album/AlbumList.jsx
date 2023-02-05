@@ -59,13 +59,13 @@ function AlbumDetail({ albums }) {
 
                 </tbody>
             </div>
-            {/* <div className="m-12">
+            <div className="m-12">
                 <div className = "">{albumsList}</div>
                 <div className="">
                     <h2> {clicked ? "title for selected album" : "Click the photo of the album"} </h2>
                     {clicked && postPhotos}
                 </div>
-            </div> */}
+            </div>
         </>    
         );
   }
