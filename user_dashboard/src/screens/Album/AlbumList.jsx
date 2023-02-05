@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function AlbumDetail({ albums }) {
@@ -21,7 +22,7 @@ function AlbumDetail({ albums }) {
         <div key = {index}>
             <h4>{album.title}</h4>
             <p
-            className="cursor-pointer"
+            className="cursor-pointer text-blue-700 underline"
             onClick={() => {
                 setClicked(true);
                 fetchPhotos(album.id);
@@ -44,7 +45,7 @@ function AlbumDetail({ albums }) {
         
         return (
         <>
-            <div className="App">
+            <div className="p-20">
                 <tbody>
                     <tr>
                         <th>Album Name</th>
@@ -53,7 +54,7 @@ function AlbumDetail({ albums }) {
                     </tr>
                     <tr>
                         <td>{albumsList}</td>
-                        <td><h2> {clicked ? "title for selected album" : "Click the photo of the album"} </h2>
+                        <td><h2> {clicked ? "Selected album's Photos" : ""} </h2>
                         {clicked && postPhotos}</td>
                     </tr>
 
@@ -63,7 +64,7 @@ function AlbumDetail({ albums }) {
                 <div className = "">{albumsList}</div>
                 <div className="">
                     <h2> {clicked ? "title for selected album" : "Click the photo of the album"} </h2>
-                    {clicked && postPhotos}
+                    <Link to={`/photo/${photos.id}`}>{clicked && postPhotos}</Link>
                 </div>
             </div>
         </>    

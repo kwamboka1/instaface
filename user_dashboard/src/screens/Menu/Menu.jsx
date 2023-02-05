@@ -23,13 +23,13 @@ function Menu() {
                 <NavLink to="/" className={({ isActive }) => (isActive ? "text-purple-900 block p-3 text-lg navlink" : "block p-3 text-lg navlink")}>
                 Home
                 </NavLink>
-                <NavLink to="/User" className={({ isActive }) => (isActive ? "text-purple-900 block p-3 text-lg navlink" : "block p-3 text-lg navlink")}>
+                <NavLink to="/user" className={({ isActive }) => (isActive ? "text-purple-900 block p-3 text-lg navlink" : "block p-3 text-lg navlink")}>
                 User
                 </NavLink>
                 <NavLink to="/album" className={({ isActive }) => (isActive ? "text-purple-900 block p-3 text-lg navlink" : "block p-3 text-lg navlink")}>
                 Album
                 </NavLink>
-                <NavLink to="/Photo" className={({ isActive }) => (isActive ? "text-purple-900 block p-3 text-lg navlink" : "block p-3 text-lg navlink")}>
+                <NavLink to="/photo" className={({ isActive }) => (isActive ? "text-purple-900 block p-3 text-lg navlink" : "block p-3 text-lg navlink")}>
                 Photo
                 </NavLink>
             </nav>

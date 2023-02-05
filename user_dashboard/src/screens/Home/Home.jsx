@@ -37,26 +37,28 @@ const Home = ({ users, user, albums }) => {
                 
                 <h1 className="text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-orange-500 inline-block font-bold">DashBoard</h1><hr />
                   
-                <tbody className=" border-spacing-4 border border-purple-200 my-12">
+                <tbody className="border border-slate-500  border-spacing-4  my-12">
                   <tr>
                     <th class="text-2xl text-purple-900 border border-none border-separate border-spacing-2">Users</th>
-                    <th class="border border-none text-2xl text-purple-900 pl-48  ">Number of Albums</th>
+                    <th class="border border-none text-2xl text-purple-900 pl-48">Number of Albums</th>
                       
                   </tr><hr />
                   {users.map((user, album) => (
-                    <div className="hover:bg-purple-300 pl-1">
-                      <tr key={album}>
-                        <td className="border border-none ">
-                          <p className=" hover:text-purple-900 hover:underline">
+                    
+                      <tr className=" hover:bg-purple-300" key={album}>
+                        <td>
+                          <p className=" hover:text-purple-900 hover:underline hover:bg-purple-300">
                             <Link to={`/user/${user.id}`}>{user.name} </Link></p>
                         </td>
-                        <td className="pl-44">
+                        <td className="pl-48">
                           {albums.filter(album => album.userId === user.id).length}
                         </td>
                         
-                      </tr><hr />
-                    </div>
+                      </tr>
+                    
+                    
                   ))}
+                  
                 </tbody>
               </div>
               <Footer />

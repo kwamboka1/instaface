@@ -43,10 +43,13 @@ const App = () => {
           element={user?.email ? <Home user={user} users={users} albums={albums} /> : <Navigate to="/" />}
         />
         <Route
-          path="album" element={<Album />}
+          path="/album" element={<Album />}
         />
         <Route 
           path="/photo/:id" element={<Photo photos={photos} />} 
+        />
+        <Route 
+          path="/photo" element={<Photo />} 
         />
         <Route 
           path="/user/:id" element={<User albums={albums} />} 

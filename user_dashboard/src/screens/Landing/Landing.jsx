@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Login, Signup } from "..";
 
+
 const Landing = () => {
+  // console.log(window.location.pathname);
   return (
     <div className="bg-[url('/hero-section.svg')]">
         <div>
