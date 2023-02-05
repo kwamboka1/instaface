@@ -3,32 +3,22 @@ import { Link } from "react-router-dom";
 import { Menu, Footer } from "..";
 
 // Pass User
-const Home = ({ user, album }) => {
+const Home = ({ users, user, albums }) => {
   const logout = () => {
     localStorage.removeItem("user");
     window.location.reload();
   }
-const [error, setError] = useState(null);
+
   const [isLoaded, setIsLoaded] = useState(false);
-  const [users, setUsers] = useState([]);
-  // const [allAlbums, setallAlbums] = useState(false);
+  
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users/")
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    setIsLoaded(true);
-                    setUsers(data);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-      }, [])
-    if (error) {
-          return <div>Error: {error.message}</div>;
-        } else if (!isLoaded) {
+    if (users.length>0){
+      setIsLoaded(true)
+    }
+    
+      }, [users])
+    
+        if (!isLoaded) {
             return <div>Loading...</div>;
         } else {
           return (
@@ -38,35 +28,34 @@ const [error, setError] = useState(null);
                   >
                     Logout
               </button>
-              <div className="m-12">
-                <p className="start">Dear {user?.email}</p> 
-                    <em><small>
-                      You are viewing this page because you are logged in or you just signed
-                      up
-                    </small></em><br />
+              <div className="grid place-content-center">
+                <p className="text-xl text-purple-900"> Dear <span className="start text-blue-900 underline text-sm">{user?.email} ,</span> </p>
+                    <small className="text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-orange-500">
+                      <em>You are viewing this page because you are logged in or you just signed
+                      up, Have fun!</em>
+                    </small>&#128540;
                 
-                <h1 className="text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-orange-500 text-center inline-block font-bold">DashBoard</h1><hr />
+                <h1 className="text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-orange-500 inline-block font-bold">DashBoard</h1><hr />
                   
-                <tbody>
+                <tbody className=" border-spacing-4 border border-purple-200 my-12">
                   <tr>
-                    <th>Users</th>
-                    <th>Number of Albums</th>
-                      {/* <ul>
-                        {users.map(user => (
-                          <li className="hover:text-purple-900 hover:underline">
-                              <Link to={`user/${user.id}`}>{user.name} {user.album}</Link>
-                          </li>
-                        ))}
-                      </ul> */}
-                  </tr>
+                    <th class="text-2xl text-purple-900 border border-none border-separate border-spacing-2">Users</th>
+                    <th class="border border-none text-2xl text-purple-900 pl-48  ">Number of Albums</th>
+                      
+                  </tr><hr />
                   {users.map((user, album) => (
-                  <tr key={album}> 
-                    <td>
-                      <p className="hover:text-purple-900 hover:underline">
-                      <Link to={`user/${user.id}`}>{user.name}</Link></p>
-                    </td>
-
-                  </tr>
+                    <div className="hover:bg-purple-300 pl-1">
+                      <tr key={album}>
+                        <td className="border border-none ">
+                          <p className=" hover:text-purple-900 hover:underline">
+                            <Link to={`/user/${user.id}`}>{user.name} </Link></p>
+                        </td>
+                        <td className="pl-44">
+                          {albums.filter(album => album.userId === user.id).length}
+                        </td>
+                        
+                      </tr><hr />
+                    </div>
                   ))}
                 </tbody>
               </div>
