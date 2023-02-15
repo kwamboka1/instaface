@@ -4,6 +4,7 @@
 		"es2021": true
 	},
 	"extends": [
+		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:prettier/recommended",
 		"prettier"
@@ -16,5 +17,13 @@
 		"sourceType": "module"
 	},
 	"plugins": ["react"],
-	"rules": {}
+	"rules": {
+		"require-jsdoc": [0],
+		"no-restricted-imports": [
+			"error",
+			{
+				"patterns": ["../"]
+			}
+		]
+	}
 }
