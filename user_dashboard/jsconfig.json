@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		"outDir": "build/dist",
+		"module": "esnext",
+		"target": "esnext",
+		"lib": ["ES5", "ES6", "dom", "dom.iterable", "esnext"],
+		"sourceMap": true,
+		"baseUrl": "./src",
+		"jsx": "react",
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"noUnusedLocals": false,
+		"allowJs": true,
+		"experimentalDecorators": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"strict": true,
+		"resolveJsonModule": true,
+		"declaration": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"noImplicitAny": false
+	},
+	"include": ["src/**/*"],
+	"typeRoots": ["node_modules/@types"],
+	"exclude": [
+		"node_modules",
+		"build",
+		"scripts",
+		"acceptance-tests",
+		"webpack",
+		"jest",
+		"tslint:latest",
+		"tslint-config-prettier",
+		"**/*.spec.ts",
+		"**/*.spec.tsx"
+	]
+}
